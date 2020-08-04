@@ -1,1 +1,1 @@
-Projects I have written at MCC.
+Projects wrote while attending MiraCosta College.
