@@ -1,0 +1,233 @@
+/*
+Bryan Miller
+Goal: Utilize struct to serve as inner node class, build LL methods.
+Algorithim: See comments below:
+*/
+/***************Disclamer************: The additional methods to implement for review questions will not work in unison with list, there's alot going on with the
+pointers. Will work individually if you comment out different sections.
+Implemented them in code to get practice for C++ data structures. Also, passing in the ListNode to me seems redundunt when you have access to the head
+regardless. If theres a special purpose that I'm not seeing please let me know.
+*/
+#include<iostream>
+#include<vector>
+using namespace std;
+
+//create ListNode struct with members, data and pointer to next node, in constructor; parameters contain "data" of type double
+struct ListNode{
+	double data;
+	ListNode *next;
+	ListNode(double data){
+		this->data = data;
+		next = nullptr;
+	}
+};
+//Create members ListNode obj with pointer to head, and size of list
+class LinkedList{
+	public:
+	ListNode *head;
+	int size;
+//in no-arg constructor intialize size
+	LinkedList(){
+		size = 0;
+		head = nullptr;
+	}
+//in add methods create newNode pointer and pass in data, set it's next to head and set heads reference to the node, increase size.
+
+	void add(double x){ 							//this is an add first method
+		ListNode *newNode = new ListNode(x) ;    // Create new node and ptr
+    	newNode->next = head ;                      // Assign value of head ptr to next ptr of new node
+    	head = newNode ;                            // Set head to point at new node
+    	size++ ;		
+	}
+//set two pointers to head, the beg will set the pointer to the start of the list before returning back to caller
+//advance through the list until data is found
+  	bool isMember(double x){
+  		ListNode *current = head ;
+  		ListNode *beg = head;
+  		for(int i = 0; i < size; i++){
+  			if(head->data == x){
+  				head = beg;
+  				return true;
+			}
+			head = head->next;  
+		}
+		head = beg;
+		return false;
+	}
+//same protocal as last function, advance through listby calling next and display its data
+	void print(){
+		ListNode *current = head;
+		ListNode *beg = head;
+		for(int i = 0; i < size; i++){
+			cout<<"Current data: "<<head->data<<" ";
+			head = head->next;
+		}
+		head = beg;
+	}
+//again here have three pointers to start of list and a vector to hold current lists data
+//push the data to the vector, restart the list, then set current nodes data to each index in the vector effectively reversing the list
+	void reverseList(){
+		ListNode *current = head;
+		ListNode *beg = head;
+		ListNode *restart = head;
+		vector<double> myVec;
+		for(int i = 0; i < size; i++){
+			myVec.push_back(head->data);
+			head = head->next;
+		}
+		head = beg;
+		for(int i = 0; i < myVec.size(); i++){
+			head->data = myVec.at(myVec.size() - i - 1);
+			head = head->next;
+		}
+		head = restart;
+	}
+//same deal as isMember function
+	int search(double x){
+		int count = 0;
+		ListNode *beg = head;
+		ListNode *current = head;
+		while(head != nullptr){
+			if(head->data == x){
+				head = beg;
+				return count;
+			}
+			head = head->next;
+			count++;
+		}
+		head = beg;
+		return false;
+	}
+	//essentially finds the current index, having cases for: front; rear; end. Then sets the current index to that data. 
+	//Finally with use of vector to hold the data, loops through list adding each corresponding data to the next following node.
+	//When reaching the end will create a new node with the previous lists ends data.
+	void insert(double x, int pos){
+		ListNode *beg = head;
+		ListNode *current = head;
+		vector<double> myVec;
+		if(pos > size || pos < 0){
+			cout<<"Invalid position"<<endl;
+			return;
+		} 
+		if(pos == size){
+			while(head != nullptr){
+				if(head->next == nullptr){
+					myVec.push_back(head->data);
+					head->data = x;
+					ListNode *newNode = new ListNode(myVec.at(0));
+					newNode->next = head ;                      // Assign value of head ptr to next ptr of new node
+    				head->next = newNode ;                            // Set head (next) to point at new node
+    				size++ ;	
+					head = beg;
+					return;
+				}
+				head = head->next;
+			}
+		}
+		for(int i = 0; i < size; i++){
+			if(i == pos){
+				myVec.push_back(head->data);
+				head->data = x;
+			}
+			if(i > pos){
+				myVec.push_back(head->data);
+				head->data = myVec.at(i - pos - 1);
+			}
+			if(i + 1 == size){
+				break;
+			}
+			head = head->next;
+		}
+		ListNode *newNode = new ListNode(myVec.at(myVec.size() - 1)) ;
+		newNode->next = head ;                      // Assign value of head ptr to next ptr of new node
+    	head->next = newNode ;                            // Set head (next) to point at new node
+    	size++ ;	
+		head = beg;
+	}
+	double lastValue(ListNode *ptr){
+		ListNode *beg = head;
+		if(this->head == nullptr){
+			return NULL;
+		}
+	 	ptr = head;
+	 	
+	 	while(head != nullptr){
+	 		if(head->next == nullptr){
+	 			double data = head->data;
+	 			head = beg;
+	 			return data;
+			 }
+	 		head = head->next;
+		 }
+	 }
+	ListNode * removeFirst(ListNode *ptr) {
+		if(head == nullptr){
+	 		return NULL;
+		}
+		ptr = head;
+		head = head->next;
+		return head;
+	}
+	ListNode * listConcat(ListNode *list1, ListNode *list2){
+	 	ListNode *beg = this->head;
+	 	vector<double> myVec;
+	 	while(list1 != nullptr){
+	 		list1 = list1->next;
+	 		if(list1->next == nullptr){
+	 			break;
+			 }
+		}
+		while(list2 != nullptr){
+			if(list2 == nullptr){
+	 			break;
+			}
+			myVec.push_back(list2->data);
+	 		list2 = list2->next;
+		}
+		for(int i = 0;i < myVec.size();i++){
+			ListNode *newNode = new ListNode(myVec.at(i));
+			newNode->next = list1 ;                      // Assign value of head ptr to next ptr of new node
+ 			list1->next = newNode ;                            // Set head (next) to point at new node
+ 			size++ ;
+			list1 = list1->next;	
+		}
+	 	list1 = beg;
+	 	return list1;
+	}
+};
+int main(){
+	LinkedList first;
+	first.add(12.0);	/*The add method, add's to the beg of list */
+	first.add(11.0);
+	first.add(10.0);
+	first.add(9.0);
+	LinkedList second;
+	second.add(55.0);
+	second.add(67.0);
+	second.add(33.0);
+	
+	cout<<"Is 10.0 a member? "<<first.isMember(10.0)<<endl;;
+	cout<<"Is 9.0 a member? "<<first.isMember(9.0)<<endl;
+	cout<<"Current list: "<<endl;
+	first.print();
+	cout<<"\n"<<"Reversed list: "<<endl;
+	first.reverseList();
+	first.print();
+	first.insert(22.0, 4);
+	cout<<"\n"<<"After inserting 22.0 in index 4: "<<endl;
+	first.print();
+
+//	cout<<"Last value of list"<<endl;
+//	cout<<first.lastValue(first.head)<<endl;
+
+//	cout<<"Adding first and second lists together using concat function"<<endl;
+//	cout<<"Displaying: "<<endl;
+//	first.listConcat(first.head, second.head);
+//	first.print();
+//	cout<<"\n"<<"Removing the head of the list"<<endl;
+//	ListNode *headData ;
+//	first.removeFirst(first.head);
+//	cout<<"Printing the new list after first node was removed: "<<endl;
+//	first.print(); 
+	
+}
