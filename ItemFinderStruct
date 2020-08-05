@@ -1,0 +1,140 @@
+/*Bryan Miller
+Goal:Using the the provided text file, have user allocate data to the file, then edit, view and add more data as user continues through program
+Algorithim: See comments below
+*/
+#include <iostream>
+#include <fstream> //must include fstream to use of/f stream
+#include <string>
+using namespace std;
+struct Info{ //create a structure of data with following local variables, in constructor initialize. Additionally implement getters.
+	string itemD;
+	int quant;
+	double wholeCost;
+	double retailCost;
+	string  dateAdded;
+	string update = "";
+	Info(string itemD, int quant, double wholeCost, double retailCost, string dateAdded){
+		this->itemD = itemD;
+		this->quant = quant;
+		this->wholeCost = wholeCost;
+		this->retailCost = retailCost;
+		this->dateAdded = dateAdded;
+	}
+	string getItem(){
+		return itemD;
+	}
+	int getQuant(){
+		return quant;
+	}
+	double getWhole(){
+		return wholeCost;
+	}
+	double getRetail(){
+		return retailCost;
+	}
+	string getDate(){
+		return dateAdded;
+	}
+};
+int main(){
+	ofstream out_file; //declare of/f stream variables
+	fstream in_file;
+	bool state = true;
+	int choice;
+	string line;
+	int pos;
+	while(state == true){ 
+		cout<<"Enter 1 if you would like to add new records to the file"<<endl;
+		cout<<"Enter 2 if you would like to display any record in the file."<<endl;
+		cout<<"Enter 3 if you would like to change any record in the file."<<endl;
+		cout<<"Enter 4 if you would like to quit"<<endl;
+		cin>>choice;
+		if(choice == 1){
+			out_file.open("inout.txt", ios::app | ios::out) ; //open the file in choice and close file when finished with this block
+			string itemD;
+			int quant;
+			double wholeCost;
+			double retailCost;
+			string  dateAdded;
+			cout<<"Enter item name"<<endl;
+			cin>>itemD;
+			cout<<"Enter quantity of item."<<endl;
+			cin>>quant;
+			cout<<"Enter wholesale cost"<<endl;
+			cin>>wholeCost;
+			cout<<"Enter retail cost"<<endl;
+			cin>>retailCost;
+			cout<<"Enter date added"<<endl;
+			cin>>dateAdded;
+			Info temp(itemD, quant, wholeCost, retailCost, dateAdded); //create temp object of struct then pass in data to output file
+			out_file<<"\n";
+			out_file << "(Item: " << temp.getItem()<<") (Quantity: "<<temp.getQuant()<<"$) (Wholesale cost: "<<temp.getWhole()<< "$)"<<
+			"(Retail cost:" <<temp.getRetail()<<") (Date added: "<<temp.getDate()<<")";
+			out_file.close();
+		}
+		if(choice == 2){
+			in_file.open("inout.txt", ios::in) ;	//open and close in file like above
+			in_file.seekg(0, ios::beg);				//seek beginning of file
+			string itm;
+			cout<<"Enter item to search"<<endl;		//have user search item
+			cin>>itm;
+			while(!in_file.eof()){					//while not end of file
+				getline(in_file, line); // get line from file
+      			pos = line.find(itm); // search
+      			if(pos!=string::npos) // string::npos is returned if string is not found
+        		{
+        			cout<<""<<endl;
+            		cout<<"Heres the contents of the item searched: "<<endl;
+            		cout<<line<<"\n";
+        		}
+        	}
+        	in_file.close();
+		}if(choice == 3){
+			in_file.open("inout.txt", ios::in) ;		//again do same as above
+			string update;
+			in_file.seekg(0, ios::beg);
+			string itm;
+			cout<<"Enter item to search"<<endl;
+			cin>>itm;
+			while(!in_file.eof()){
+				getline(in_file, line); // get line from file
+      			pos = line.find(itm); // search
+      			if(pos!=string::npos) // string::npos is returned if string is not found
+        		{	
+        
+        		}else{
+        			update += (line + "\n");		//if the data isn't the line the user searched add it to a string
+				}
+        	}	
+		in_file.close();
+		remove("inout.txt");						//remove text file
+		rename("inout.txt", "inout.txt");			//keep the same file
+		out_file.open("inout.txt", ios::app | ios::out) ;		//open the output file and close
+		out_file<< update;										//write new string to file
+		cout<<"Now enter information to be displayed in place of old information: "<<endl;
+			string itemD;										//have user enter in information they would like to write in place of the information they wanted
+			int quant;											//to change from old info
+			double wholeCost;
+			double retailCost;
+			string  dateAdded;
+			cout<<"Enter item name"<<endl;
+			cin>>itemD;
+			cout<<"Enter quantity of item."<<endl;
+			cin>>quant;
+			cout<<"Enter wholesale cost"<<endl;
+			cin>>wholeCost;
+			cout<<"Enter retail cost"<<endl;
+			cin>>retailCost;
+			cout<<"Enter date added"<<endl;
+			cin>>dateAdded;
+			Info temp(itemD, quant, wholeCost, retailCost, dateAdded);
+			out_file<<"\n";
+			out_file << "(Item: " << temp.getItem()<<") (Quantity: "<<temp.getQuant()<<"$) (Wholesale cost: "<<temp.getWhole()<< "$)"<<
+			"(Retail cost:" <<temp.getRetail()<<") (Date added: "<<temp.getDate()<<")";
+			out_file.close();
+		}
+		if(choice == 4){
+			break;
+		}
+	}
+}
