@@ -1,1 +1,1 @@
-Projects wrote while attending MiraCosta College.
+Previous C++ projects developed during schooling at MiraCosta College.
