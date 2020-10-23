@@ -1,1 +1,1 @@
-Previous C++ projects developed during schooling at MiraCosta College.
+C++ projects done at MCC and CSUSM.
