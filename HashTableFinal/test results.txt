@@ -1,0 +1,613 @@
+Script started on Sat 12 Dec 2020 04:53:02 PM PST
+]0;mille486@empress:~/cs311files/CS311Progs/HWPrograms/forPROJ [?1034h[mille486@empress forPROJ]$ ex./a.oug++ -std=c++11 elem.cpp htable.cpp llist.cpp slist.cppp FinalClient.cpp
+]0;mille486@empress:~/cs311files/CS311Progs/HWPrograms/forPROJ [mille486@empress forPROJ]$ g++ -std=c++11 elem.cpp htable.cpp llist.cpp slist.cppp FinalClient.cpp[A[C[C[C[C[C[C[C[C[C[Cexit[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out
+Enter a file name: TickerList.txt
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+1
+Successfully loaded the data.
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+2
+0:[[ RIOT 9.13 Crypto ]
+ ]
+1:[[empty]
+ ]
+2:[[ DIS 153.28 Entertainment ]
+ ]
+3:[[ QCOM 157.43 Tech ]
+ ]
+4:[[ MARA 4.94 Crypto ]
+ ]
+5:[[ AMD 91.78 Semiconductor ]
+ ]
+6:[[ BA 245.99 Transportation CRM 221.59 Tech ]
+ ]
+7:[[ SNAP 52.85 Tech TWTR 50.09 Tech ]
+ ]
+8:[[ SBUX 105.78 Food-Beverage ]
+ ]
+9:[[empty]
+ ]
+10:[[ SQ 214.38 Tech ]
+ ]
+11:[[ TSLA 628.3 Automotive ]
+ ]
+12:[[ BAC 28.54 Finance ]
+ ]
+13:[[ V 208.13 Financial ]
+ ]
+14:[[empty]
+ ]
+15:[[ AMZN 3137.19 ECommerce CMG 1311.74 FoodBeverage ]
+ ]
+16:[[empty]
+ ]
+17:[[empty]
+ ]
+18:[[ CSCO 44.4 Tech ]
+ ]
+19:[[ NFLX 500.42 Entertainment WMT 147.2 Retail ]
+ ]
+20:[[ NVDA 518.7 Tech ]
+ ]
+21:[[empty]
+ ]
+22:[[empty]
+ ]
+23:[[ MSFT 211.37 Tech SHOP 1062.11 Tech ]
+ ]
+24:[[empty]
+ ]
+25:[[empty]
+ ]
+26:[[empty]
+ ]
+27:[[empty]
+ ]
+28:[[ APPL 124.5 Tech ]
+ ]
+29:[[empty]
+ ]
+30:[[ INTC 50.4 Tech ]
+ ]
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+3
+Enter your ticker symbol to be search, i.e. APPL.
+X
+There's no element associated with that key.
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+4
+Enter the name of your ticker
+1
+The ticker symbol must be in uppercase
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+4
+Enter the name of your ticker
+SPXS
+Enter the stock price
+213.22
+Enter the category, for example: tech; financial; etc.
+1
+Not a valid category
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+4
+Enter the name of your ticker
+SPXS
+Enter the stock price
+213.22
+Enter the category, for example: tech; financial; etc.
+ETF
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+2
+0:[[ RIOT 9.13 Crypto ]
+ ]
+1:[[ SPXS 213.22 ETF ]
+ ]
+2:[[ DIS 153.28 Entertainment ]
+ ]
+3:[[ QCOM 157.43 Tech ]
+ ]
+4:[[ MARA 4.94 Crypto ]
+ ]
+5:[[ AMD 91.78 Semiconductor ]
+ ]
+6:[[ BA 245.99 Transportation CRM 221.59 Tech ]
+ ]
+7:[[ SNAP 52.85 Tech TWTR 50.09 Tech ]
+ ]
+8:[[ SBUX 105.78 Food-Beverage ]
+ ]
+9:[[empty]
+ ]
+10:[[ SQ 214.38 Tech ]
+ ]
+11:[[ TSLA 628.3 Automotive ]
+ ]
+12:[[ BAC 28.54 Finance ]
+ ]
+13:[[ V 208.13 Financial ]
+ ]
+14:[[empty]
+ ]
+15:[[ AMZN 3137.19 ECommerce CMG 1311.74 FoodBeverage ]
+ ]
+16:[[empty]
+ ]
+17:[[empty]
+ ]
+18:[[ CSCO 44.4 Tech ]
+ ]
+19:[[ NFLX 500.42 Entertainment WMT 147.2 Retail ]
+ ]
+20:[[ NVDA 518.7 Tech ]
+ ]
+21:[[empty]
+ ]
+22:[[empty]
+ ]
+23:[[ MSFT 211.37 Tech SHOP 1062.11 Tech ]
+ ]
+24:[[empty]
+ ]
+25:[[empty]
+ ]
+26:[[empty]
+ ]
+27:[[empty]
+ ]
+28:[[ APPL 124.5 Tech ]
+ ]
+29:[[empty]
+ ]
+30:[[ INTC 50.4 Tech ]
+ ]
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+3
+Enter your ticker symbol to be search, i.e. APPL.
+SPXS
+SPXS 213.22 ETF
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+5
+Enter a ticker symbol you would like to delete, i.e. APPL
+b
+The ticker symbol must be in uppercase
+Ticker symbolbdoesn't exist in your watchlist
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+5
+Enter a ticker symbol you would like to delete, i.e. APPL
+APPL
+APPL has been successfully deleted
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+2
+0:[[ RIOT 9.13 Crypto ]
+ ]
+1:[[ SPXS 213.22 ETF ]
+ ]
+2:[[ DIS 153.28 Entertainment ]
+ ]
+3:[[ QCOM 157.43 Tech ]
+ ]
+4:[[ MARA 4.94 Crypto ]
+ ]
+5:[[ AMD 91.78 Semiconductor ]
+ ]
+6:[[ BA 245.99 Transportation CRM 221.59 Tech ]
+ ]
+7:[[ SNAP 52.85 Tech TWTR 50.09 Tech ]
+ ]
+8:[[ SBUX 105.78 Food-Beverage ]
+ ]
+9:[[empty]
+ ]
+10:[[ SQ 214.38 Tech ]
+ ]
+11:[[ TSLA 628.3 Automotive ]
+ ]
+12:[[ BAC 28.54 Finance ]
+ ]
+13:[[ V 208.13 Financial ]
+ ]
+14:[[empty]
+ ]
+15:[[ AMZN 3137.19 ECommerce CMG 1311.74 FoodBeverage ]
+ ]
+16:[[empty]
+ ]
+17:[[empty]
+ ]
+18:[[ CSCO 44.4 Tech ]
+ ]
+19:[[ NFLX 500.42 Entertainment WMT 147.2 Retail ]
+ ]
+20:[[ NVDA 518.7 Tech ]
+ ]
+21:[[empty]
+ ]
+22:[[empty]
+ ]
+23:[[ MSFT 211.37 Tech SHOP 1062.11 Tech ]
+ ]
+24:[[empty]
+ ]
+25:[[empty]
+ ]
+26:[[empty]
+ ]
+27:[[empty]
+ ]
+28:[[empty]
+ ]
+29:[[empty]
+ ]
+30:[[ INTC 50.4 Tech ]
+ ]
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+6
+What text file would you like to write to? 
+Outputfile.txt
+0:[[ RIOT 9.13 Crypto ]
+ ]
+1:[[ SPXS 213.22 ETF ]
+ ]
+2:[[ DIS 153.28 Entertainment ]
+ ]
+3:[[ QCOM 157.43 Tech ]
+ ]
+4:[[ MARA 4.94 Crypto ]
+ ]
+5:[[ AMD 91.78 Semiconductor ]
+ ]
+6:[[ BA 245.99 Transportation CRM 221.59 Tech ]
+ ]
+7:[[ SNAP 52.85 Tech TWTR 50.09 Tech ]
+ ]
+8:[[ SBUX 105.78 Food-Beverage ]
+ ]
+9:[[empty]
+ ]
+10:[[ SQ 214.38 Tech ]
+ ]
+11:[[ TSLA 628.3 Automotive ]
+ ]
+12:[[ BAC 28.54 Finance ]
+ ]
+13:[[ V 208.13 Financial ]
+ ]
+14:[[empty]
+ ]
+15:[[ AMZN 3137.19 ECommerce CMG 1311.74 FoodBeverage ]
+ ]
+16:[[empty]
+ ]
+17:[[empty]
+ ]
+18:[[ CSCO 44.4 Tech ]
+ ]
+19:[[ NFLX 500.42 Entertainment WMT 147.2 Retail ]
+ ]
+20:[[ NVDA 518.7 Tech ]
+ ]
+21:[[empty]
+ ]
+22:[[empty]
+ ]
+23:[[ MSFT 211.37 Tech SHOP 1062.11 Tech ]
+ ]
+24:[[empty]
+ ]
+25:[[empty]
+ ]
+26:[[empty]
+ ]
+27:[[empty]
+ ]
+28:[[empty]
+ ]
+29:[[empty]
+ ]
+30:[[ INTC 50.4 Tech ]
+ ]
+Sent data to: Outputfile.txt
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+7
+]0;mille486@empress:~/cs311files/CS311Progs/HWPrograms/forPROJ [mille486@empress forPROJ]$ ./a.out
+Enter a file name: Outputfile.txt
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+1
+Successfully loaded the data.
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+2
+0:[[ RIOT 9.13 Crypto ]
+ ]
+1:[[ SPXS 213.22 ETF ]
+ ]
+2:[[ DIS 153.28 Entertainment ]
+ ]
+3:[[ QCOM 157.43 Tech ]
+ ]
+4:[[ MARA 4.94 Crypto ]
+ ]
+5:[[ AMD 91.78 Semiconductor ]
+ ]
+6:[[ BA 245.99 Transportation CRM 221.59 Tech ]
+ ]
+7:[[ SNAP 52.85 Tech TWTR 50.09 Tech ]
+ ]
+8:[[ SBUX 105.78 Food-Beverage ]
+ ]
+9:[[empty]
+ ]
+10:[[ SQ 214.38 Tech ]
+ ]
+11:[[ TSLA 628.3 Automotive ]
+ ]
+12:[[ BAC 28.54 Finance ]
+ ]
+13:[[ V 208.13 Financial ]
+ ]
+14:[[empty]
+ ]
+15:[[ AMZN 3137.19 ECommerce CMG 1311.74 FoodBeverage ]
+ ]
+16:[[empty]
+ ]
+17:[[empty]
+ ]
+18:[[ CSCO 44.4 Tech ]
+ ]
+19:[[ NFLX 500.42 Entertainment WMT 147.2 Retail ]
+ ]
+20:[[ NVDA 518.7 Tech ]
+ ]
+21:[[empty]
+ ]
+22:[[empty]
+ ]
+23:[[ MSFT 211.37 Tech SHOP 1062.11 Tech ]
+ ]
+24:[[empty]
+ ]
+25:[[empty]
+ ]
+26:[[empty]
+ ]
+27:[[empty]
+ ]
+28:[[empty]
+ ]
+29:[[empty]
+ ]
+30:[[ INTC 50.4 Tech ]
+ ]
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+3
+Enter your ticker symbol to be search, i.e. APPL.
+TSLA
+TSLA 628.3 Automotive
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+5
+Enter a ticker symbol you would like to delete, i.e. APPL
+TSLA
+TSLA has been successfully deleted
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+2
+0:[[ RIOT 9.13 Crypto ]
+ ]
+1:[[ SPXS 213.22 ETF ]
+ ]
+2:[[ DIS 153.28 Entertainment ]
+ ]
+3:[[ QCOM 157.43 Tech ]
+ ]
+4:[[ MARA 4.94 Crypto ]
+ ]
+5:[[ AMD 91.78 Semiconductor ]
+ ]
+6:[[ BA 245.99 Transportation CRM 221.59 Tech ]
+ ]
+7:[[ SNAP 52.85 Tech TWTR 50.09 Tech ]
+ ]
+8:[[ SBUX 105.78 Food-Beverage ]
+ ]
+9:[[empty]
+ ]
+10:[[ SQ 214.38 Tech ]
+ ]
+11:[[empty]
+ ]
+12:[[ BAC 28.54 Finance ]
+ ]
+13:[[ V 208.13 Financial ]
+ ]
+14:[[empty]
+ ]
+15:[[ AMZN 3137.19 ECommerce CMG 1311.74 FoodBeverage ]
+ ]
+16:[[empty]
+ ]
+17:[[empty]
+ ]
+18:[[ CSCO 44.4 Tech ]
+ ]
+19:[[ NFLX 500.42 Entertainment WMT 147.2 Retail ]
+ ]
+20:[[ NVDA 518.7 Tech ]
+ ]
+21:[[empty]
+ ]
+22:[[empty]
+ ]
+23:[[ MSFT 211.37 Tech SHOP 1062.11 Tech ]
+ ]
+24:[[empty]
+ ]
+25:[[empty]
+ ]
+26:[[empty]
+ ]
+27:[[empty]
+ ]
+28:[[empty]
+ ]
+29:[[empty]
+ ]
+30:[[ INTC 50.4 Tech ]
+ ]
+
+Enter your choice:
+1.) Load the data file
+2.) Display your Watchlist
+3.) Search by ticker
+4.) Add a new stock to your watchlist
+5.) Remove stock from watchlist
+6.) Output watchlist to text file
+7.) Exit
+7
+]0;mille486@empress:~/cs311files/CS311Progs/HWPrograms/forPROJ [mille486@empress forPROJ]$ exit
+exit
+
+Script done on Sat 12 Dec 2020 04:56:55 PM PST
