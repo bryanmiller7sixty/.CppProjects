@@ -1,1 +1,1 @@
-C++ projects done at MCC and CSUSM.
+# CSUSM and Miracosta course projects
