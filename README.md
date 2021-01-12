@@ -1,1 +1,1 @@
-# CSUSM and Miracosta course projects
+# CSUSM and MiraCosta course projects
